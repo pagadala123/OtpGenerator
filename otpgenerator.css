@@ -1,0 +1,36 @@
+body{
+    width: 100%;
+    text-align: center;
+    font-size: larger;
+    font-weight: 500;
+    background-image: url(Space-Background-Image-3.jpg);
+}
+
+.box{
+    border: 1px solid black;
+    margin: 0% 35% 10% 35%;
+    height:200px ;
+    background: linear-gradient(to right,violet,white);
+     display: flex;
+     flex-direction: column;
+     font-size: larger;
+     
+}
+.box:hover{
+    background:linear-gradient(to right,white,violet) ;
+
+}
+button{
+    width: fit-content;
+    margin: auto;
+    color:black;
+    background-color:lightskyblue;
+    font-size: medium;
+}
+h1{
+    color: gold;
+    margin-top: 10%;
+}
+#otp-input{
+    font-size: medium;
+}

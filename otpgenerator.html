@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP-GENERATOR</title>
+    <link rel="stylesheet" href="otpgenerator.css">
+</head>
+<body>
+ <h1>OTP-Generator</h1>
+    <div class="box">
+         <p>Here is your OTP: <span id="otp-display">----</span></p>
+            <label > <input type="text" id="otp-input" placeholder="Enter your OTP"></label>
+          <button id="verify-button">verify</button>
+          <p id="output1"></p>
+    </div>
+   <script>
+         function otpgenerate(){
+            const otp= Math.floor(1000+Math.random()*9000);
+            return otp;
+        }
+        function updatedotp(){
+            const OTPoutput=document.querySelector("#otp-display");
+            const otp=otpgenerate();
+           OTPoutput.innerText=otp;
+            return otp;
+        }
+           document.querySelector("#verify-button")
+            .addEventListener("click",function() {
+            const OTPInput=document.querySelector("#otp-input");
+            const OTPoutput=document.querySelector("#otp-display");
+            const result=document.querySelector("#output1");
+           
+            const generatedOTP= OTPoutput.innerText;
+            const enteredOTP=OTPInput.value;
+                 OTPInput.value="";
+
+                if(generatedOTP===enteredOTP){
+                    result.innerHTML= "OTP Registered";
+                }else{
+                    result.innerHTML="OTP Rejected";
+                }
+               
+            });
+                 updatedotp();
+     
+                 setInterval(updatedotp,10000);
+    </script>
+</body>
+</html>
